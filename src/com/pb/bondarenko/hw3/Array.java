@@ -19,15 +19,15 @@ public class Array {
             System.out.print(anArray + " ");
         }
         int posElms=0;
-        int summArr=0;
+        int sumArr=0;
 
         for (int i = 0; i < arr.length; i++) {
-            summArr+=arr[i];
+            sumArr+=arr[i];
             if (arr[i]>0){
                 posElms++;
             }
         }
-        System.out.println("\nСумма элементов массива равна: "+summArr );
+        System.out.println("\nСумма элементов массива равна: "+sumArr );
         System.out.println("Кол-во положительных элементов в массиве: "+posElms);
 
         boolean sorted = false;
