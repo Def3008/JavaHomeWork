@@ -1,15 +1,18 @@
 package com.pb.bondarenko.hw6;
 
 public class Animal {
-  private String food;
-   private String location;
-   void makeNoise(String zhivotnoe){
-       System.out.println(zhivotnoe + " шумит");
-   }
-    void eat(String zhivotnoe){
+    private String food;
+    private String location;
+
+    void makeNoise(String zhivotnoe) {
+        System.out.println(zhivotnoe + " шумит");
+    }
+
+    void eat(String zhivotnoe) {
         System.out.println(zhivotnoe + " ест");
     }
-    void sleep(String zhivotnoe){
+
+    void sleep(String zhivotnoe) {
         System.out.println(zhivotnoe + " спит");
     }
 
