@@ -55,11 +55,10 @@ public class Auth {
             {
                 System.out.println("Вход успешен");
 
-            } else {throw new WrongPasswordException("неправильный логин "+inpPassword + " или пароль " +inpPassword
-                    );}
+            } else {throw new WrongPasswordException();}
         } catch (Exception e) {
-            System.out.println("неправильный логин "+inpPassword + " или пароль " +inpPassword);
-            throw new WrongPasswordException("неправильный логин "+inpPassword + " или пароль" +inpPassword);
+          //  System.out.println("неправильный логин "+inpPassword + " или пароль " +inpPassword);
+            throw new WrongPasswordException();
 
         }
     }
