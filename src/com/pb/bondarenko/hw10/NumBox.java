@@ -9,27 +9,36 @@ public class NumBox<T extends Number> {
         this.number = (T[]) new Number[maxArrSize];
     }
 
-    public void add(T num) throws Exception {
-        for (int i = 0; i < number.length; i++) {
-            if (number[i] == null) {
-                number[i] = num;
-                break;
-            }
-//             else {
-//                throw new Exception("Массив полон");
-//            }
-        }
-    }
-
     public T get(int index) {
         return number[index];
     }
 
+    public void set(int index, T number) {
+        this.number[index] = number;
+    }
+
+    public void add(T num) throws Exception {
+        boolean attempt = true;
+        for (int i = 0; i < number.length; i++) {
+            if (number[i] == null) {
+                number[i] = num;
+//                System.out.println(number[i] + "  " + attempt);
+                attempt = false;
+                break;
+            }
+
+        }
+        if (attempt) {
+            throw new Exception("Массив полон, не резиновый!!!");
+        }
+    }
+
     public int length() {
         int maxI = 0;
-        for (T number : number) {
-            if (number != null) {
+        for (T num : number) {
+            if (num != null) {
                 maxI++;
+//                System.out.println(maxI);
             }
         }
         return maxI;
@@ -37,12 +46,12 @@ public class NumBox<T extends Number> {
 
     public double average() {
         return sum() / length();
-            }
+    }
 
     public double sum() {
         double summ = 0;
         for (T n : number) {
-            if (n!=null) {
+            if (n != null) {
                 summ += n.doubleValue();
             }
         }
@@ -51,11 +60,12 @@ public class NumBox<T extends Number> {
 
     public T max() {
         T maxNumber = number[0];
-        for (int i = 0; i < number.length; i++) {
-
-            if (number[i].doubleValue() > maxNumber.doubleValue()) {
-                maxNumber = number[i];
-            } else break;
+        for (T n : number) {
+            if (n != null) {
+                if (maxNumber.doubleValue() < n.doubleValue()) {
+                    maxNumber = n;
+                }
+            }
         }
         return maxNumber;
     }
