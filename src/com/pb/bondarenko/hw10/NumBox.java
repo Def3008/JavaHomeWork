@@ -1,6 +1,5 @@
 package com.pb.bondarenko.hw10;
 
-import java.util.Arrays;
 
 public class NumBox<T extends Number> {
     private final T[] number;
@@ -22,7 +21,6 @@ public class NumBox<T extends Number> {
         for (int i = 0; i < number.length; i++) {
             if (number[i] == null) {
                 number[i] = num;
-//                System.out.println(number[i] + "  " + attempt);
                 attempt = false;
                 break;
             }
