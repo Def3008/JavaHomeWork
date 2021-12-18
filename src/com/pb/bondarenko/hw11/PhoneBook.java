@@ -2,6 +2,7 @@ package com.pb.bondarenko.hw11;
 
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+
 import java.time.LocalDate;
 import java.util.List;
 
@@ -12,17 +13,8 @@ public class PhoneBook {
     private String address;
     @JsonDeserialize(using = LocalDateDeserializer.class)
     @JsonSerialize(using = LocalDateSerializer.class)
-    private LocalDate dlm = LocalDate.now();;
-
-    @Override
-    public String toString() {
-        return "PhoneBook{" +
-                "fio='" + fio + '\'' +
-                ", bth='" + bth + '\'' +
-                ", phones=" + phones +
-                ", address='" + address + '\'' +
-                '}';
-    }
+    private LocalDate dlm = LocalDate.now();
+    ;
 
     public String getFio() {
         return fio;
@@ -60,7 +52,7 @@ public class PhoneBook {
         this.dlm = dlm;
     }
 
-        public void setBth(String bth) {
+    public void setBth(String bth) {
         this.bth = this.bth;
     }
 
@@ -72,5 +64,14 @@ public class PhoneBook {
         this.address = address;
     }
 
+    @Override
+    public String toString() {
+        return "PhoneBook{" +
+                "fio='" + fio + '\'' +
+                ", bth='" + bth + '\'' +
+                ", phones=" + phones +
+                ", address='" + address + '\'' +
+                '}';
+    }
 
 }
